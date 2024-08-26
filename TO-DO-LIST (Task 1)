@@ -1,5 +1,6 @@
 class TODOLIST:
     def __init__(self):
+        # Initialize an empty list for tasks
         self.tasks=[]
     
     def add(self,tasks):
@@ -26,6 +27,7 @@ class TODOLIST:
         print("All the Tasks are Removed from TO-DO-List.")
           
     def show_menu(self):
+        #Display the menu options
         print("\nTo-Do List Option Menu:")
         print("1. View tasks")
         print("2. Add a task")
@@ -35,6 +37,7 @@ class TODOLIST:
     
     def run(self):
      while True:
+        # Main loop to handle user input
         self.show_menu()
         option=input("Choose An Option to Perform Tasks:")
         
@@ -55,10 +58,11 @@ class TODOLIST:
             
         elif option=="5":
             exit()
-        
+
         else:
             print("Invalid Option! Please Choose a Appropriate Option From Menu")
 
+#Executing a Code
 if __name__=="__main__":
     user=TODOLIST()
     user.run()       
