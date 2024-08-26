@@ -1,0 +1,64 @@
+class TODOLIST:
+    def __init__(self):
+        self.tasks=[]
+    
+    def add(self,tasks):
+        self.tasks.append(tasks)
+    
+    def remove(self,orderOfTasks):
+        if 0<orderOfTasks<=len(self.tasks):
+            self.tasks.pop(orderOfTasks-1)
+            print("Task is Removed From List.")
+        else:
+            print("Invalid Index of Task.")
+        
+    def view(self):
+        if not self.tasks:
+            print("TO-DO-List Is Empty.")
+            
+        else:
+            print("Your TO-DO-List is")
+            for i in range(0,len(self.tasks)):
+                print(f"{i+1}.{self.tasks[i]}")
+                
+    def clearall(self):
+        self.tasks.clear()
+        print("All the Tasks are Removed from TO-DO-List.")
+          
+    def show_menu(self):
+        print("\nTo-Do List Option Menu:")
+        print("1. View tasks")
+        print("2. Add a task")
+        print("3. Remove a task")
+        print("4. Clear all tasks")
+        print("5. Exit\n")
+    
+    def run(self):
+     while True:
+        self.show_menu()
+        option=input("Choose An Option to Perform Tasks:")
+        
+        if option=="1":
+            self.view()
+        
+        elif option=="2":
+            tasks=input("Enter A Task Name:")
+            self.add(tasks)
+            print("Task is added Sucessfully.")
+        
+        elif option=="3":
+            orderOfTasks=int(input("Enter the Index of Task to Remove:"))
+            self.remove(orderOfTasks)
+            
+        elif option=="4":
+            self.clearall()
+            
+        elif option=="5":
+            exit()
+        
+        else:
+            print("Invalid Option! Please Choose a Appropriate Option From Menu")
+
+if __name__=="__main__":
+    user=TODOLIST()
+    user.run()       
