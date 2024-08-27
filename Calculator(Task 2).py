@@ -1,0 +1,36 @@
+class Calculator:
+    def __init__(self):
+        pass
+# Function to perform the calculation
+    def calculate(self,num1, num2, operation):
+        #Dictionary for Operators
+        Sign = {
+            '+': num1 + num2,
+            '-': num1 - num2,
+            '*': num1 * num2,
+            '/': num1 / num2 if num2!= 0 else "Error: Division by zero"
+        }
+        #return statement for calculate function using get() of Dictionary.
+        return Sign.get(operation,"Invalid Operation")
+        
+        
+if __name__=="__main__":
+    while True:
+        try:
+            #Prompting User For Input
+            num1 = float(input("Enter the first number:"))
+            num2 = float(input("Enter the second number:"))
+            operation = input("Enter the operation (+, -, *, /):")
+            user=Calculator() #object Creation
+            result = user.calculate(num1, num2, operation)
+            #Printing the Result
+            print(f"The result of {num1} {operation} {num2} is: {result}")
+        
+        except ValueError:
+            print("Invalid input. Please enter numeric values.")
+        
+        #Asking to Proceed or Terminate the Program
+        ex=input("Continue?(Y/N):")
+        ex=ex.lower()
+        if  ex=="n":
+            break
