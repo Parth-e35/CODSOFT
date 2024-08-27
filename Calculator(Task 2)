@@ -12,8 +12,7 @@ class Calculator:
         }
         #return statement for calculate function using get() of Dictionary.
         return Sign.get(operation,"Invalid Operation")
-        
-        
+               
 if __name__=="__main__":
     while True:
         try:
