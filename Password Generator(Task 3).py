@@ -1,0 +1,35 @@
+import random as rand
+class PasswordGenerator:
+    def __init__(self):
+        #class variables/DATA
+        self.lower="abcdefghijklmnopqrstuvwxyz"
+        self.upper="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        self.num="0123456789"
+        self.spl="!@#$%^&*()-_=+[]{}|;:',.<>?/~`"
+        self.fullset=self.lower+self.upper+self.num+self.spl
+        
+    def generate(self,n):
+        #To generate random Password Sequence.
+        p="".join(rand.choice(self.fullset)for i in range(n))
+        return p
+        
+if __name__=="__main__":
+    while True:
+        try:
+            #Prompting the user
+            n=int(input("Enter A length of the Password:"))
+            if n<1:
+                print("Password length should be at least 1.")
+            else:
+                user=PasswordGenerator()
+                password=user.generate(n)
+                print("Generated Password :"+password)
+        except ValueError:
+            print("Please enter Valid Length of Password!!")
+            
+        #Asking to Proceed or Terminate the Program
+        ex=input("Want to Generate Another Password?(Y/N):")
+        ex=ex.lower()
+        if  ex=="n":
+            print("Thanks for using Password Generator!")
+            break
