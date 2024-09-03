@@ -26,7 +26,6 @@ if __name__ == "__main__":
     print("Welcome to Rock-Paper-Scissors!")
     
     game = RockPaperScissorsGame()
-    
     while True:
         user = input("Enter Rock, Paper, or Scissors (or 'quit' to stop): ").lower()
 
