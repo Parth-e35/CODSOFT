@@ -20,7 +20,7 @@ class RockPaperScissorsGame:
             return "Computer wins!"
 
     def display(self):
-        print("Score: You -",self.user_score,"Computer - ",self.computer_score)
+        print("Score: You -",self.user,"Computer - ",self.computer)
 
 if __name__ == "__main__":
     print("Welcome to Rock-Paper-Scissors!")
@@ -38,7 +38,7 @@ if __name__ == "__main__":
             continue
         
         computer_choice = game.computer_choice()
-        result = game.determine_winner(user, computer_choice)
+        result = game.winner(user, computer_choice)
         
         print("\nYou chose: ",user)
         print("Computer chose: ",computer_choice)
